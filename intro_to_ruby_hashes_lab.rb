@@ -15,7 +15,7 @@ def id_generator
 end
 
 def my_hash_creator(key, value)
-my_hash_creator(:key, value)
+{key => value}
 end
 
 def read_from_hash(hash, key)
@@ -23,5 +23,6 @@ def read_from_hash(hash, key)
 end
 
 def update_counting_hash(hash, key)
-update_counting_hash(:hash, key) = +1 
+hash[key] ? hash[key] += 1 : hash[key] = 1 
+hash
 end
